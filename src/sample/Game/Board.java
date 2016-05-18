@@ -1,4 +1,4 @@
-package sample;
+package sample.Game;
 
 
 import sample.Players.Player;
