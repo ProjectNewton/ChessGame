@@ -26,16 +26,12 @@ public class Board {
         boolBoard = new boolean[8][8];
         for (int row = 0; row < boolBoard.length; row++) {
             for (int col = 0; col < boolBoard[0].length; col++) {
-                if ((row + col)%2 == 0)
-                    boolBoard[row][col] = true;
-                else
-                    boolBoard[row][col] = false;
+                boolBoard[row][col] = (row + col) % 2 == 0;
             }
         }
     }
 
     /*
-    *//**
      * <p>  it fills the board with integer values that correspond to the correct piece and sets
      *      up the board in starting position
      *          <ul> WHITE
@@ -57,13 +53,13 @@ public class Board {
      * </p>
     public void fillBoard() {
 
-    }*//*
-
-    public boolean[][] getBoolBoard() {
-        return boolBoard;
     }*/
 
+    public boolean[][] getBoolBoard() {
+        return boolBoard.clone();
+    }
+
     public int[][] getBoard() {
-        return board;
+        return board.clone();
     }
 }
