@@ -1,4 +1,4 @@
-package sample;
+package sample.Pieces;
 
 /**
  * Created by Rohan D'Souza on 5/14/2016.

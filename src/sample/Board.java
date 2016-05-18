@@ -1,6 +1,8 @@
 package sample;
 
 
+import sample.Players.Player;
+
 /**
  * Created by Rohan D'Souza on 5/13/2016.
  */
@@ -32,7 +34,8 @@ public class Board {
         }
     }
 
-    /**
+    /*
+    *//**
      * <p>  it fills the board with integer values that correspond to the correct piece and sets
      *      up the board in starting position
      *          <ul> WHITE
@@ -52,14 +55,13 @@ public class Board {
      *              <li><strong>pawn</strong>   >> 11</li>
      *          </ul>
      * </p>
-     */
     public void fillBoard() {
 
-    }
+    }*//*
 
     public boolean[][] getBoolBoard() {
         return boolBoard;
-    }
+    }*/
 
     public int[][] getBoard() {
         return board;
