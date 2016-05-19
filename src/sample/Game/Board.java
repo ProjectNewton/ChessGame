@@ -7,6 +7,7 @@ import sample.Players.Player;
  * Created by Rohan D'Souza on 5/13/2016.
  */
 public class Board {
+    public static final int SIZE = 8;
     private static final String fill = " ";
     /**
      * <p>  This is a 2 dimensional array of <code>booleans</code> that is used in

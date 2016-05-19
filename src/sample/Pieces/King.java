@@ -1,5 +1,6 @@
 package sample.Pieces;
 
+import sample.Game.Board;
 import sample.Game.Coordinate;
 
 /**
@@ -10,6 +11,12 @@ public class King implements Piece{
     private boolean color;
     private Coordinate position;
     private Coordinate[] coordinates;
+
+    public King(int row, int col) {
+        color = row < Board.SIZE/2;
+        position = new Coordinate(row,col);
+        setCoordinates();
+    }
 
     @Override
     public boolean getColor() {
@@ -23,7 +30,7 @@ public class King implements Piece{
 
     @Override
     public Coordinate[] getCoordinates() {
-        return coordinates;
+        return coordinates.clone();
     }
 
     @Override
@@ -39,5 +46,6 @@ public class King implements Piece{
     public void setPosition(int row, int col) {
         position.setRow(row);
         position.setCol(col);
+        setCoordinates();
     }
 }
