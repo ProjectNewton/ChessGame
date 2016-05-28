@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>sample.Pieces</OriginalElement>
+  <nodes>
+    <node x="358.0" y="238.0">sample.Main</node>
+    <node x="325.0" y="79.0">sample.Pieces.Knight</node>
+    <node x="412.0" y="79.0">sample.Pieces.Queen</node>
+    <node x="246.0" y="79.0">sample.Pieces.Rook</node>
+    <node x="62.75" y="163.0">sample.Players.Player</node>
+    <node x="202.75" y="-54.0">sample.Pieces.Piece</node>
+    <node x="1.0" y="79.0">sample.Pieces.King</node>
+    <node x="386.0" y="164.0">sample.Controller</node>
+    <node x="0.0" y="242.0">sample.Players.HumanPlyr</node>
+    <node x="77.0" y="79.0">sample.Pieces.Pawn</node>
+    <node x="112.0" y="242.0">sample.Players.AIplyr</node>
+    <node x="250.0" y="164.0">sample.Game.Coordinate</node>
+    <node x="158.0" y="79.0">sample.Pieces.Bishop</node>
+    <node x="250.0" y="238.0">sample.Game.Board</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="sample.Pieces.Rook" target="sample.Pieces.Piece">
+      <point x="0.0" y="-14.5" />
+      <point x="274.5" y="45.0" />
+      <point x="237.75" y="45.0" />
+      <point x="5.0" y="14.5" />
+    </edge>
+    <edge source="sample.Pieces.Bishop" target="sample.Pieces.Piece">
+      <point x="0.0" y="-14.5" />
+      <point x="191.0" y="45.0" />
+      <point x="227.75" y="45.0" />
+      <point x="-5.0" y="14.5" />
+    </edge>
+    <edge source="sample.Pieces.Pawn" target="sample.Pieces.Piece">
+      <point x="0.0" y="-14.5" />
+      <point x="106.5" y="35.0" />
+      <point x="217.75" y="35.0" />
+      <point x="-15.0" y="14.5" />
+    </edge>
+    <edge source="sample.Pieces.Queen" target="sample.Pieces.Piece">
+      <point x="0.0" y="-14.5" />
+      <point x="444.5" y="25.0" />
+      <point x="257.75" y="25.0" />
+      <point x="25.0" y="14.5" />
+    </edge>
+    <edge source="sample.Pieces.King" target="sample.Pieces.Piece">
+      <point x="0.0" y="-14.5" />
+      <point x="28.0" y="25.0" />
+      <point x="207.75" y="25.0" />
+      <point x="-25.0" y="14.5" />
+    </edge>
+    <edge source="sample.Pieces.Knight" target="sample.Pieces.Piece">
+      <point x="0.0" y="-14.5" />
+      <point x="357.5" y="35.0" />
+      <point x="247.75" y="35.0" />
+      <point x="15.0" y="14.5" />
+    </edge>
+    <edge source="sample.Players.AIplyr" target="sample.Players.Player">
+      <point x="0.0" y="-14.5" />
+      <point x="143.5" y="217.0" />
+      <point x="110.75" y="217.0" />
+      <point x="16.0" y="14.5" />
+    </edge>
+    <edge source="sample.Players.HumanPlyr" target="sample.Players.Player">
+      <point x="0.0" y="-14.5" />
+      <point x="46.0" y="217.0" />
+      <point x="78.75" y="217.0" />
+      <point x="-16.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="239.0" y="59.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

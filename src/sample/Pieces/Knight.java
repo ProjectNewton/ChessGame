@@ -3,6 +3,8 @@ package sample.Pieces;
 import sample.Game.Board;
 import sample.Game.Coordinate;
 
+import java.util.ArrayList;
+
 /**
  * Created by Rohan D'Souza on 5/17/2016.
  */
@@ -10,7 +12,7 @@ public class Knight implements Piece{
     public static final int VALUE = 3;
     private boolean color;
     private Coordinate position;
-    private Coordinate[] coordinates;
+    private ArrayList<Coordinate> coordinates;
 
     public Knight(int row, int col) {
         color = row < Board.SIZE/2;
@@ -29,9 +31,7 @@ public class Knight implements Piece{
     }
 
     @Override
-    public Coordinate[] getCoordinates() {
-        return coordinates.clone();
-    }
+    public ArrayList<Coordinate> getCoordinates() { return (ArrayList<Coordinate>) coordinates.clone(); }
 
     @Override
     public void setCoordinates() {
