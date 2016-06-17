@@ -36,7 +36,18 @@ public class King implements Piece{
 
     @Override
     public void setCoordinates() {
+        coordinates.clear();
+        int row = position.getRow();
+        int col = position.getCol();
+        coordinates.add(new Coordinate(row+1, col));
+        coordinates.add(new Coordinate(row-1,col));
+        coordinates.add(new Coordinate(row,col+1));
+        coordinates.add(new Coordinate(row,col-1));
 
+        coordinates.add(new Coordinate(row+1,col+1));
+        coordinates.add(new Coordinate(row+1,col-1));
+        coordinates.add(new Coordinate(row-1,col+1));
+        coordinates.add(new Coordinate(row-1,col-1));
     }
 
     @Override

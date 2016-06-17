@@ -29,6 +29,18 @@ public class Coordinate{
         this.col = col;
     }
 
+    public static int getIndex(Coordinate[] array, Coordinate coordinate) {
+        int index = -1;
+        for (Coordinate coor : array) {
+            index++;
+            if (coor.equals(coordinate))
+                return index;
+        }
+        return index;
+    }
+
+
+
     public boolean equals(Coordinate o) {
         return getCol() == o.getCol() && getRow() == o.getRow();
     }

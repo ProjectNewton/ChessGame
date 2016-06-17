@@ -2,6 +2,7 @@ package sample.Pieces;
 
 import sample.Game.Board;
 import sample.Game.Coordinate;
+import sample.Main;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,12 @@ public class Pawn implements Piece{
     private boolean color;
     private Coordinate position;
     private ArrayList<Coordinate> coordinates;
+
+
+    /**
+     * determine which direction is forward for the pawn.
+     */
+    private int forward = (color) ? 1 : -1;
 
     public Pawn(int row, int col) {
         color = row < Board.SIZE/2;
@@ -35,6 +42,13 @@ public class Pawn implements Piece{
 
     @Override
     public void setCoordinates() {
+        coordinates.clear();
+        int row = position.getRow();
+        int col = position.getCol();
+        Coordinate coor = new Coordinate(row+2*forward,col);
+        if(Main.round == 1)
+            coordinates.add(coor);
+        coordinates.add(new Coordinate(row+forward,col));
     }
 
     @Override
@@ -46,5 +60,6 @@ public class Pawn implements Piece{
     public void setPosition(int row, int col) {
         position.setRow(row);
         position.setCol(col);
+        setCoordinates();
     }
 }

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import javax.swing.*;
 
 public class Main extends Application {
+    public static int round = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

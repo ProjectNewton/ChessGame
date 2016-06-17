@@ -1,7 +1,7 @@
 package sample.Game;
 
 
-import sample.Players.Player;
+import sample.Pieces.*;
 
 /**
  * Created by Rohan D'Souza on 5/13/2016.
@@ -20,21 +20,21 @@ public class Board {
      *      </p>
      */
     private boolean[][] boolBoard;
-    private int[][] board;
+    private Piece[][] pieceBoard;
+    //private int[][] pieceBoard;
 
     public Board() {
-        board = new int[8][8];
-        boolBoard = new boolean[8][8];
+        //pieceBoard = new int[SIZE][SIZE];
+        boolBoard = new boolean[SIZE][SIZE];
         for (int row = 0; row < boolBoard.length; row++) {
             for (int col = 0; col < boolBoard[0].length; col++) {
                 boolBoard[row][col] = (row + col) % 2 == 0;
             }
         }
     }
-
-    /*
-     * <p>  it fills the board with integer values that correspond to the correct piece and sets
-     *      up the board in starting position
+     /*
+     * <p>  it fills the pieceBoard with integer values that correspond to the correct piece and sets
+     *      up the pieceBoard in starting position
      *          <ul> WHITE
      *              <li><strong>king</strong>   >> 6</li>
      *              <li><strong>queen</strong>  >> 5</li>
@@ -52,15 +52,52 @@ public class Board {
      *              <li><strong>pawn</strong>   >> 11</li>
      *          </ul>
      * </p>
-    public void fillBoard() {
+     */
+    public void setPieceBoard() {setTopBoard(); setBotBoard();}
 
-    }*/
+    public void setTopBoard() {
+        pieceBoard[0][0]= new Rook(0,0); pieceBoard[0][1]= new Knight(0,1); pieceBoard[0][2]= new Bishop(0,2); pieceBoard[0][3]= new King(0,3);
+            pieceBoard[0][4]= new Queen(0,4); pieceBoard[0][5]= new Bishop(0,5); pieceBoard[0][6]= new Knight(0,6); pieceBoard[0][7]= new Rook(0,7);
+        for (int i = 0; i < SIZE; i++) {
+            pieceBoard[1][i]= new Pawn(1,i);
+        }
+    }
+
+    public void setBotBoard() {
+        pieceBoard[7][0]= new Rook(7,0); pieceBoard[7][1]= new Knight(7,1); pieceBoard[7][2]= new Bishop(7,2); pieceBoard[7][3]= new King(7,3);
+            pieceBoard[7][4]= new Queen(7,4); pieceBoard[7][5]= new Bishop(7,5); pieceBoard[7][6]= new Knight(7,6); pieceBoard[7][7]= new Rook(7,7);
+        for (int i = 0; i < SIZE; i++) {
+            pieceBoard[7][i]= new Pawn(7,i);
+        }
+    }
 
     public boolean[][] getBoolBoard() {
         return boolBoard.clone();
     }
 
-    public int[][] getBoard() {
-        return board.clone();
+    public Piece[][] getPieceBoard() {
+        return pieceBoard.clone();
+    }
+    public static void display(Piece[][]board)
+    {
+        System.out.println();
+        for (int r = 0; r < board.length; r++)
+        {
+            for (int c = 0; c < board[0].length; c++)
+            {
+                if (c == 0)
+                {
+                    System.out.print(r);
+                    System.out.print("  ");
+                }
+                else System.out.print(" ");
+                if (board[r][c]==null) System.out.print(" ");
+                else System.out.print(board[r][c]);
+                if (c < board[0].length - 1) System.out.print(" |");
+                else System.out.println();
+            }
+            if (r < board.length - 1) System.out.println("  -------------------------------");
+        }
+        System.out.println("\n   0   1   2   3   4   5   6   7\n");
     }
 }

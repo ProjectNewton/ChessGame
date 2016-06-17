@@ -35,6 +35,17 @@ public class Knight implements Piece{
 
     @Override
     public void setCoordinates() {
+        coordinates.clear();
+        int row = position.getRow();
+        int col = position.getCol();
+        coordinates.add(new Coordinate(row+2, col+1));
+        coordinates.add(new Coordinate(row+2, col-1));
+        coordinates.add(new Coordinate(row+1, col+2));
+        coordinates.add(new Coordinate(row+1, col-2));
+        coordinates.add(new Coordinate(row-1, col-2));
+        coordinates.add(new Coordinate(row-1, col+2));
+        coordinates.add(new Coordinate(row-2, col+1));
+        coordinates.add(new Coordinate(row-2, col-1));
     }
 
     @Override
@@ -46,5 +57,6 @@ public class Knight implements Piece{
     public void setPosition(int row, int col) {
         position.setRow(row);
         position.setCol(col);
+        setCoordinates();
     }
 }

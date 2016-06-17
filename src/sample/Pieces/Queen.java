@@ -35,6 +35,15 @@ public class Queen implements Piece{
 
     @Override
     public void setCoordinates() {
+        coordinates.clear();
+        int row = position.getRow();
+        int col = position.getCol();
+        for (int rowNum=0; rowNum < Board.SIZE; rowNum++) {
+            coordinates.add(new Coordinate(rowNum, col));
+        }
+        for (int colNum=0; colNum < Board.SIZE; colNum++) {
+            coordinates.add(new Coordinate(row, colNum));
+        }
     }
 
     @Override
@@ -46,5 +55,6 @@ public class Queen implements Piece{
     public void setPosition(int row, int col) {
         position.setRow(row);
         position.setCol(col);
+        setCoordinates();
     }
 }

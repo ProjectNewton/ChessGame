@@ -35,6 +35,10 @@ public class Rook implements Piece{
 
     @Override
     public void setCoordinates() {
+        coordinates.clear();
+        int row = position.getRow();
+        int col = position.getCol();
+
     }
 
     @Override
@@ -46,5 +50,6 @@ public class Rook implements Piece{
     public void setPosition(int row, int col) {
         position.setRow(row);
         position.setCol(col);
+        setCoordinates();
     }
 }

@@ -31,10 +31,13 @@ public class Bishop implements Piece{
     }
 
     @Override
-    public ArrayList<Coordinate> getCoordinates() { return (ArrayList<Coordinate>) coordinates.clone(); }
+    public ArrayList<Coordinate> getCoordinates() {
+        return (ArrayList<Coordinate>) coordinates.clone();
+    }
 
     @Override
     public void setCoordinates() {
+        coordinates.clear();
         int row = position.getRow();
         int col = position.getCol();
         int c1 = 0;
@@ -68,5 +71,6 @@ public class Bishop implements Piece{
     public void setPosition(int row, int col) {
         position.setRow(row);
         position.setCol(col);
+        setCoordinates();
     }
 }
