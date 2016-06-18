@@ -25,6 +25,8 @@ public class Board {
 
     public Board() {
         //pieceBoard = new int[SIZE][SIZE];
+        pieceBoard = new Piece[SIZE][SIZE];
+        setPieceBoard();
         boolBoard = new boolean[SIZE][SIZE];
         for (int row = 0; row < boolBoard.length; row++) {
             for (int col = 0; col < boolBoard[0].length; col++) {
@@ -32,7 +34,7 @@ public class Board {
             }
         }
     }
-     /*
+     /*   ** I G N O R E      T H I S **
      * <p>  it fills the pieceBoard with integer values that correspond to the correct piece and sets
      *      up the pieceBoard in starting position
      *          <ul> WHITE
