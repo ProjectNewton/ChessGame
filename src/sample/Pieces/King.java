@@ -20,6 +20,7 @@ public class King implements Piece{
         setCoordinates();
     }
 
+
     @Override
     public boolean getColor() {
         return color;
@@ -61,4 +62,5 @@ public class King implements Piece{
         position.setCol(col);
         setCoordinates();
     }
+
 }
