@@ -57,4 +57,7 @@ public class Queen implements Piece{
         position.setCol(col);
         setCoordinates();
     }
+
+    @Override
+    public String toString() {return String.valueOf(QUEENstr);}
 }

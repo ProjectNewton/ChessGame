@@ -73,4 +73,7 @@ public class Bishop implements Piece{
         position.setCol(col);
         setCoordinates();
     }
+
+    @Override
+    public String toString() {return String.valueOf(BISHOPstr);}
 }

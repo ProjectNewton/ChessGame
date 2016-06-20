@@ -63,4 +63,6 @@ public class King implements Piece{
         setCoordinates();
     }
 
+    @Override
+    public String toString() {return String.valueOf(KINGstr);}
 }
