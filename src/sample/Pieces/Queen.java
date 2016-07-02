@@ -17,6 +17,7 @@ public class Queen implements Piece{
     public Queen(int row, int col) {
         color = row < Board.SIZE/2;
         position = new Coordinate(row,col);
+        coordinates = new ArrayList<>();
         setCoordinates();
     }
 
@@ -35,7 +36,7 @@ public class Queen implements Piece{
 
     @Override
     public void setCoordinates() {
-        coordinates.clear();
+        if (coordinates != null) coordinates.clear();
         int row = position.getRow();
         int col = position.getCol();
         for (int rowNum=0; rowNum < Board.SIZE; rowNum++) {

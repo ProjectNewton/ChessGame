@@ -17,6 +17,7 @@ public class Rook implements Piece{
     public Rook(int row, int col) {
         color = row < Board.SIZE/2;
         position = new Coordinate(row,col);
+        coordinates = new ArrayList<>();
         setCoordinates();
     }
 
@@ -35,7 +36,7 @@ public class Rook implements Piece{
 
     @Override
     public void setCoordinates() {
-        coordinates.clear();
+        if (coordinates != null) coordinates.clear();
         int row = position.getRow();
         int col = position.getCol();
 

@@ -25,7 +25,7 @@ public class Board {
 
     public Board() {
         //pieceBoard = new int[SIZE][SIZE];
-        pieceBoard = new Piece[SIZE][SIZE];
+        pieceBoard = new Piece[8][8];
         setPieceBoard();
         boolBoard = new boolean[SIZE][SIZE];
         for (int row = 0; row < boolBoard.length; row++) {
@@ -58,8 +58,14 @@ public class Board {
     public void setPieceBoard() {setTopBoard(); setBotBoard();}
 
     public void setTopBoard() {
-        pieceBoard[0][0]= new Rook(0,0); pieceBoard[0][1]= new Knight(0,1); pieceBoard[0][2]= new Bishop(0,2); pieceBoard[0][3]= new King(0,3);
-            pieceBoard[0][4]= new Queen(0,4); pieceBoard[0][5]= new Bishop(0,5); pieceBoard[0][6]= new Knight(0,6); pieceBoard[0][7]= new Rook(0,7);
+        pieceBoard[0][0]= new Rook(0,0);
+        pieceBoard[0][1]= new Knight(0,1);
+        pieceBoard[0][2]= new Bishop(0,2);
+        pieceBoard[0][3]= new King(0,3);
+        pieceBoard[0][4]= new Queen(0,4);
+        pieceBoard[0][5]= new Bishop(0,5);
+        pieceBoard[0][6]= new Knight(0,6);
+        pieceBoard[0][7]= new Rook(0,7);
         for (int i = 0; i < SIZE; i++) {
             pieceBoard[1][i]= new Pawn(1,i);
         }
@@ -69,7 +75,7 @@ public class Board {
         pieceBoard[7][0]= new Rook(7,0); pieceBoard[7][1]= new Knight(7,1); pieceBoard[7][2]= new Bishop(7,2); pieceBoard[7][3]= new King(7,3);
             pieceBoard[7][4]= new Queen(7,4); pieceBoard[7][5]= new Bishop(7,5); pieceBoard[7][6]= new Knight(7,6); pieceBoard[7][7]= new Rook(7,7);
         for (int i = 0; i < SIZE; i++) {
-            pieceBoard[7][i]= new Pawn(7,i);
+            pieceBoard[6][i]= new Pawn(7,i);
         }
     }
 
@@ -94,12 +100,34 @@ public class Board {
                 }
                 else System.out.print(" ");
                 if (board[r][c]==null) System.out.print(" ");
-                else System.out.print(board[r][c]);
+                else System.out.print(board[r][c].display());
                 if (c < board[0].length - 1) System.out.print(" |");
                 else System.out.println();
             }
             if (r < board.length - 1) System.out.println("  -------------------------------");
         }
         System.out.println("\n   0   1   2   3   4   5   6   7\n");
+    }
+
+    public String toString() {
+        String str = "\n";
+        for (int r = 0; r < getPieceBoard().length; r++)
+        {
+            for (int c = 0; c < getPieceBoard()[0].length; c++)
+            {
+                if (c == 0)
+                {
+                    str += r + "  ";
+                }
+                else str += " ";
+                if (getPieceBoard()[r][c]==null) str += " ";
+                else str += getPieceBoard()[r][c].display();
+                if (c < getPieceBoard()[0].length - 1) str += " |";
+                else str+="\n";
+            }
+            if (r < getPieceBoard().length - 1) str+="  -------------------------------\n";
+        }
+        str+="\n   0   1   2   3   4   5   6   7\n\n";
+        return str;
     }
 }

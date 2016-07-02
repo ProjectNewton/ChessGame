@@ -17,6 +17,7 @@ public class Bishop implements Piece{
     public Bishop(int row, int col) {
         color = row < Board.SIZE/2;
         position = new Coordinate(row,col);
+        coordinates = new ArrayList<>();
         setCoordinates();
     }
 
@@ -37,26 +38,26 @@ public class Bishop implements Piece{
 
     @Override
     public void setCoordinates() {
-        coordinates.clear();
+        if (coordinates != null) coordinates.clear();
         int row = position.getRow();
         int col = position.getCol();
         int c1 = 0;
         int c2 = 0;
         int c3 = 0;
         int c4 = 0;
-        while (row < 8 && row >= 0 && col < 8 && col >= 0) {
+        while (row+c1 < 8 && col+c1 < 8) {
             c1++;
             coordinates.add(new Coordinate(row+c1, col+c1));
         }
-        while (row < 8 && row >= 0 && col < 8 && col >= 0) {
+        while (row+c2 < 8 && col-c2 >= 0) {
             c2++;
             coordinates.add(new Coordinate(row+c2, col-c2));
         }
-        while (row < 8 && row >= 0 && col < 8 && col >= 0) {
+        while (row-c3 >= 0 && col+c3 < 8) {
             c3++;
             coordinates.add(new Coordinate(row-c3, col+c3));
         }
-        while (row < 8 && row >= 0 && col < 8 && col >= 0) {
+        while (row-c4 >= 0 && col-c4 >= 0) {
             c4++;
             coordinates.add(new Coordinate(row-c4, col-c4));
         }

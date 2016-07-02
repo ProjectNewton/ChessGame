@@ -1,5 +1,6 @@
 package sample.Pieces;
 
+import sample.Game.Board;
 import sample.Game.Coordinate;
 
 import java.util.ArrayList;
@@ -23,6 +24,6 @@ public interface Piece {
     void setPosition(int row, int col);
 
     default public String display() {
-        return getColor() ? toString().toUpperCase() : toString();
+        return getPosition().getRow()< Board.SIZE/2 ? toString().toUpperCase() : toString();
     }
 }

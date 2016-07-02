@@ -17,6 +17,7 @@ public class Knight implements Piece{
     public Knight(int row, int col) {
         color = row < Board.SIZE/2;
         position = new Coordinate(row,col);
+        coordinates = new ArrayList<>();
         setCoordinates();
     }
 
@@ -35,7 +36,7 @@ public class Knight implements Piece{
 
     @Override
     public void setCoordinates() {
-        coordinates.clear();
+        if (coordinates != null) coordinates.clear();
         int row = position.getRow();
         int col = position.getCol();
         coordinates.add(new Coordinate(row+2, col+1));

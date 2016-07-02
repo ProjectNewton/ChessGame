@@ -1,4 +1,5 @@
 package sample;
+import java.awt.event.ActionEvent;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,8 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.Game.Board;
+import sample.Players.HumanPlyr;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Main extends Application {
     public static int round = 0;
@@ -23,9 +26,24 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        final JPanel panel = new JPanel();
+        panel.add(new JButton(new AbstractAction("Instructions") {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(panel, "*Add Instrustions Here*");
+            }
+        }
+        ));
+        JOptionPane.showMessageDialog(null, panel);
+
         Board board = new Board();
-        board.display(board.getPieceBoard());
-        JOptionPane.showMessageDialog(null,
+        System.out.println(board);
+        HumanPlyr Player1 = new HumanPlyr();
+
+
+        //JOptionPane.showMessageDialog(null, board);
+        //JButton[][] thing = new JButton[3][3];
+        //JOptionPane.showMessageDialog();
+        /*JOptionPane.showMessageDialog(null,
                 "Rohan                   rohan" +
                 "\nRohan                   rohan" +
                 "\nRohan                   rohan" +
@@ -34,6 +52,7 @@ public class Main extends Application {
                 "\nRohan                   rohan" +
                 "\nRohan                   rohan");
 
-        String name = JOptionPane.showInputDialog(null, "Hello World");
+        String name = JOptionPane.showInputDialog(null, "Hello World");*/
+
     }
 }
